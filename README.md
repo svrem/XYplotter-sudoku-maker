@@ -3,3 +3,11 @@
 ## Installation
 
 `pip install -r requirements.txt`
+
+## Basic Usage
+
+```
+from cnc_creator import draw_puzzle
+
+draw_puzzle(10, 10)
+```
