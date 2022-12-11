@@ -1,21 +1,6 @@
 import numpy as np
 import math, random
 
-original_sudoku = np.array([
-    [8,1,2,0,0,0,0,0,0],
-    [0,0,3,6,0,0,0,0,0],
-    [0,7,0,0,9,0,2,0,0],
-    [0,5,0,0,0,7,0,0,0],
-    [0,0,0,0,4,5,7,0,0],
-    [0,0,0,1,0,0,0,3,0],
-    [0,0,1,0,0,0,0,6,8],
-    [4,0,8,5,0,0,0,1,0],
-    [7,9,6,3,1,8,4,5,2]
-])
-
-
-possibility_indexes = np.zeros((9,9), np.uint8)
-
 def check_column(loc, current_state, sudoku):
     for number in sudoku[loc]:
         if (number == 0): continue
@@ -58,19 +43,22 @@ def find_possibilities(loc, sudoku):
 
 
 def solve(sudoku):
-    changes = 1
-    while changes > 0:
-        changes = 0
-        for col in range(9):
-            for row in range(9):
-                if (sudoku[col][row] > 0): continue
+    possibility_indexes = np.zeros((9,9), np.uint8)
 
-                possibilities = find_possibilities((col, row), sudoku)
+
+    # changes = 1
+    # while changes > 0:
+    #     changes = 0
+    #     for col in range(9):
+    #         for row in range(9):
+    #             if (sudoku[col][row] > 0): continue
+
+    #             possibilities = find_possibilities((col, row), sudoku)
 
                 
-                if (len(possibilities) == 1):
-                    sudoku[col][row] = possibilities[0]
-                    changes += 1
+    #             if (len(possibilities) == 1):
+    #                 sudoku[col][row] = possibilities[0]
+    #                 changes += 1
 
 
 
@@ -129,5 +117,4 @@ def generate_sudoku(difficulty_percentage):
                 sudoku[col][row] = 0
 
     return sudoku
-
 

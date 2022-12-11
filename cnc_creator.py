@@ -90,5 +90,6 @@ def draw_puzzle(start_delta,tile_size,visualize=False):
     if (visualize):
         run_commands(commands, (300,300), 2)
 
-
+if __name__ == "__main__":
+    draw_puzzle(10, 10, True)
 

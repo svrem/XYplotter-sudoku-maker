@@ -1,2 +1,6 @@
 /output.cnc
 /__pycache__
+SudokuRecognizer/__pycache__
+/model.h5
+/sudoku.jpg
+/main.py

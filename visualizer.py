@@ -28,8 +28,9 @@ def run_commands(commands, size, scale=2):
         _img = cv2.resize(_img, (0,0), fx=scale, fy=scale, interpolation=cv2.INTER_NEAREST)
 
         cv2.imshow("img", _img)
-        cv2.waitKey(100)
+        cv2.waitKey(1)
 
+    cv2.imwrite("./sudoku.jpg", img)
     cv2.imshow("img", _img)
 
     cv2.waitKey(0)
